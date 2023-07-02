@@ -46,11 +46,14 @@ class Personaje {
 
         const cardFooter = document.createElement('div');
         cardFooter.classList.add('card-footer', 'text-body-secondary');
-        cardFooter.textContent = `Species: ${this.species}, Status: ${this.status}`;
+
+        const cardDetails = document.createElement('p');
+        cardDetails.innerHTML = `<strong>Species:</strong> ${this.species}<br> <strong>Status:</strong> ${this.status}`;
 
         // Construir la estructura de la card
         cardBody.appendChild(cardHeader);
         cardBody.appendChild(cardImage);
+        cardFooter.appendChild(cardDetails);
         cardBody.appendChild(cardFooter);
         card.appendChild(cardBody);
 
@@ -67,7 +70,7 @@ fetch('https://rickandmortyapi.com/api/character')
 
         // Crear instancias de Personaje y mostrar las cards
         personajes.slice(0, 20).forEach(personaje => {
-            const { name, species, image, status, location } = personaje;
+            const { name, species, image, status } = personaje;
             const personajeObj = new Personaje(name, species, image, status);
             personajeObj.show();
         });

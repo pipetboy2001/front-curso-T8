@@ -31,6 +31,10 @@ body {
   opacity: 1; /* Mostrar la información al pasar el ratón por encima */
 }
 
+.card-details strong {
+  font-weight: bold; /* Hacer que las palabras 'Specie' y 'Status' estén en negrita */
+}
+
 .card-details > p:not(.card-title) {
   display: none; /* Ocultar la especie y el estado por defecto */
 }
