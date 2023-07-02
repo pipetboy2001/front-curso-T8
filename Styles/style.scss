@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/stars.gif');
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.card {
+            background-color: #f8f9fa; /* Color de fondo de las tarjetas */
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            background-color: #e9ecef; /* Color de fondo de las tarjetas al pasar el ratón por encima */
+        }
+
+        .card-details {
+            opacity: 0; /* Ocultar la información por defecto */
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .card-details {
+            opacity: 1; /* Mostrar la información al pasar el ratón por encima */
+        }
+
+        .card-details > p:not(.card-title) {
+            display: none; /* Ocultar la especie y el estado por defecto */
+        }
+
+        .card:hover .card-details > p:not(.card-title) {
+            display: block; /* Mostrar la especie y el estado al pasar el ratón por encima */
+        }

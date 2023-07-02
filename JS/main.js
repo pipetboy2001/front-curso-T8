@@ -24,7 +24,6 @@ class Personaje {
         return this._status; //retorna el status
     }
 
-
     // Método para mostrar la card en el DOM
     show() {
         const cardsContainer = document.getElementById('cards-container');
@@ -36,41 +35,26 @@ class Personaje {
         const cardBody = document.createElement('div');
         cardBody.classList.add('card', 'text-center');
 
-        const cardImageContainer = document.createElement('div');
-        cardImageContainer.classList.add('card-image-container');
+        const cardHeader = document.createElement('div');
+        cardHeader.classList.add('card-header');
+        cardHeader.textContent = this.name;
 
         const cardImage = document.createElement('img');
         cardImage.classList.add('card-img-top');
         cardImage.src = this.image;
         cardImage.alt = this.name;
 
-        const cardDetails = document.createElement('div');
-        cardDetails.classList.add('card-details');
-
-        const cardTitle = document.createElement('h5');
-        cardTitle.classList.add('card-title');
-        cardTitle.textContent = this.name;
-
-        const cardSpecies = document.createElement('p');
-        cardSpecies.classList.add('card-text');
-        cardSpecies.textContent = `Species: ${this.species}`;
-
-        const cardStatus = document.createElement('p');
-        cardStatus.classList.add('card-text');
-        cardStatus.textContent = `Status: ${this.status}`;
+        const cardFooter = document.createElement('div');
+        cardFooter.classList.add('card-footer', 'text-body-secondary');
+        cardFooter.textContent = `Species: ${this.species}, Status: ${this.status}`;
 
         // Construir la estructura de la card
-        cardImageContainer.appendChild(cardImage);
-        cardBody.appendChild(cardImageContainer);
-        cardDetails.appendChild(cardTitle);
-        cardDetails.appendChild(cardSpecies);
-        cardDetails.appendChild(cardStatus);
-        cardBody.appendChild(cardDetails);
+        cardBody.appendChild(cardHeader);
+        cardBody.appendChild(cardImage);
+        cardBody.appendChild(cardFooter);
         card.appendChild(cardBody);
 
         cardsContainer.appendChild(card);
-    
-
     }
 }
 
